@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+/* variables */
+:root{
+    --main_background: hsl(222, 26%, 31%);
+    --toggleKepPadBackground : hsl(223, 31%, 20%);
+    --screenBackground: hsl(224, 36%, 15%);
+    --keyBackground: hsl(30, 25%, 89%);
+    --numBackground: hsl(221, 14%, 31%);
+    --whiteColor: hsl(0, 0, 100%);
+    --keySpecialBackground: hsl(225, 21%, 49%);
+    --redColor: hsl(6, 63%, 50%);
+}
+
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: var(--main_background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container{
+    width: 85%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 10% 20% 70%;
+    grid-template-areas: header results buttons;
+}
+
+.header{
+    margin-bottom: 30px;
+    grid-template: header;
+    color: white;
+}
+
+.results{
+    grid-template: results;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: var(--screenBackground);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    font-size: 50px;
+}
+
+.buttons{
+    grid-template: buttons;
+    border-radius: 10px;
+    background: var(--toggleKepPadBackground);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.button{
+    background: var(--keyBackground);
+    color: var(--numBackground);
+    border-radius: 5px;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-v1{
+    text-transform: uppercase;
+    font-size: 20px;
+    background: var(--keySpecialBackground);
+    color: white;
+}
+
+.button-v2{
+    background: var(--redColor);
+    color: white;
+
+}
+
+.span2{
+    grid-column: span 2;
+}
+
+.dot{
+    align-items: flex-end;
+    padding-bottom: 15px;
+}
+
+.first-level{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.second-level{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 30px;
+}
