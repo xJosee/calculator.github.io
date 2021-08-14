@@ -20,14 +20,15 @@ $btns.forEach(($btn) => {
 
 function operation(e) {
     let value = e.target.textContent; // [num || operator || del || reset || '='];
-
-    if (value == 'del' || value == 'reset') result = '';
+    debugger;
     // verifica que venga '=' y que los valores a operar sean numeros
     if (value == '=' && !isNaN(values[0]) && !isNaN(result)) result = operators[values[1]](values[0], result);
     //verifica si es un operador y guarda el primer operador y el operador
-    if (operators[value]) [values[1], values[0], result] = [value, Number(result), ''];
+    else if (operators[value]) [values[1], values[0], result] = [value, Number(result), ''];
     //concatena los numeros
     else result += value;
+
+    if (value == 'del' || value == 'reset') result = '';
 
     if (!isNaN(result)) $result.textContent = result;
 }
